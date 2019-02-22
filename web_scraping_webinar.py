@@ -16,3 +16,5 @@ soup = BeutifulSoup(res.content. 'html.parser')
 # need to find the html tags to scrape
 
 # webinar cut off will get remaining code soon
+
+# They will not upload the end to this stream.  look at other webscraping.
