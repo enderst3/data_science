@@ -27,7 +27,7 @@ for container in containers:
     product_name = title_container[0].text
     
     shipping_container = container.findAll("li", {"class":"price-ship"})
-    shipping_container[0].text.strip()
+    shipping = shipping_container[0].text.strip()
 
     print("brand: " + brand)
     print("product_name: " + product_name)
