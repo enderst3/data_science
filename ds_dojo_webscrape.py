@@ -28,7 +28,7 @@ headers = "brand, product_name, shipping\n"
 f.write(headers)
 
 for container in containers:
-    brand = container.div.div.a.img["title"]
+    brand = container.img["title"]
 
     title_container = container.findAll("a", {"class":"item-title"})
     product_name = title_container[0].text
