@@ -28,6 +28,7 @@ headers = "brand, product_name, shipping\n"
 f.write(headers)
 
 for container in containers:
+    # " lazy-img"
     brand = container.img["title"]
 
     title_container = container.findAll("a", {"class":"item-title"})
