@@ -26,10 +26,14 @@ f = open(filename, 'w')
 headers = "brand, product_name, shipping\n"
 
 f.write(headers)
-
+# print(containers[0].findAll("a", {"class":"item-brand"}))
 for container in containers:
-    # " lazy-img"
     brand = container.img["title"]
+    # print(container.div.div)
+    # brand_container = container.findAll("img", {"title"})
+    # print(container.findAll("a", {"class":"item-brand"}))
+    # brand = ' '
+    
 
     title_container = container.findAll("a", {"class":"item-title"})
     product_name = title_container[0].text
