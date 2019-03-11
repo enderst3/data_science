@@ -36,3 +36,12 @@ s2_s3_test_1 = test_1[1:3]
 student_scores = np.array([[92, 94, 88, 91, 87],
                            [79, 100, 86, 93, 91],
                            [87, 85, 72, 90, 92]])
+
+# find certain row and index
+print(student_scores[2,1])
+
+# for entire column
+print(student_scores[:,0])
+
+# select first 3 elements of first row
+print(student_scores[0,0:3])
