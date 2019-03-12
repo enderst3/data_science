@@ -45,3 +45,12 @@ print(student_scores[:,0])
 
 # select first 3 elements of first row
 print(student_scores[0,0:3])
+
+# student 1 wants to know how she did on her 3rd test
+sudent_1_test_3 = student_scores[2,0]
+
+# student 5 wants all test results
+student_4_scores = student_scores[:,4]
+
+porridge_temp = np.array([79, 65, 50, 63, 56, 90, 85, 98, 79, 51])
+
