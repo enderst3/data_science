@@ -52,5 +52,16 @@ sudent_1_test_3 = student_scores[2,0]
 # student 5 wants all test results
 student_4_scores = student_scores[:,4]
 
-porridge_temp = np.array([79, 65, 50, 63, 56, 90, 85, 98, 79, 51])
+temp = np.array([79, 65, 50, 63, 56, 90, 85, 98, 79, 51])
 
+# select temps under 60
+cold = temp[(temp <= 60)]
+print('cold = ', cold)
+
+# select temps over 80
+hot = temp[(temp >= 80)]
+print('hot = ', hot)
+
+# find temps between 60 and 80
+perfect = temp[(temp > 60) & (temp < 80)]
+print('perfect = ', perfect)
