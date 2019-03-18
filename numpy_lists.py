@@ -84,3 +84,22 @@ print('hot = ', hot)
 # find temps between 60 and 80
 perfect = temp[(temp > 60) & (temp < 80)]
 print('perfect = ', perfect)
+
+
+"""
+import numpy as np
+
+temperatures = np.genfromtxt('temperature_data.csv', delimiter=',')
+
+print(temperatures)
+
+temperatures_fixed = temperatures + 3
+
+print(temperatures_fixed)
+
+monday_temperatures = temperatures_fixed[0,:]
+
+thursday_friday_morning = temperatures_fixed[3:5,1]
+
+temperature_extremes = temperatures_fixed[(temperatures_fixed < 50) | (temperatures_fixed > 60)]
+"""
