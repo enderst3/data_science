@@ -103,3 +103,40 @@ thursday_friday_morning = temperatures_fixed[3:5,1]
 
 temperature_extremes = temperatures_fixed[(temperatures_fixed < 50) | (temperatures_fixed > 60)]
 """
+
+import numpy as np
+
+# numpy array
+cupcakes = np.array([2, .75, 2, 1, .5])
+
+# import csv w/comma as delimiter
+recipes = np.genfromtxt('recipes.csv', delimiter=',')
+
+# display recipes
+print(recipes)
+print('=' * 40)
+
+# save 3rd column as eggs
+eggs = recipes[:,2]
+print(eggs)
+print('=' * 40)
+
+# does the recipe only use one egg?
+# one_egg = recipes[(recipes[:,2]==1)]
+one_egg = recipes[(eggs==1)]
+print(one_egg)
+print('=' * 40)
+
+# save 3rd row as cookies
+cookies = recipes[2, :]
+print(cookies)
+print('=' * 40)
+
+# create double batch of cupcakes
+double_batch = cupcakes * 2
+print(double_batch)
+print('=' * 40)
+
+# shopping list for cookies and double_batch
+grocery_list = cookies+double_batch
+print(grocery_list)
