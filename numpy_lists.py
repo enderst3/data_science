@@ -16,7 +16,6 @@ it on the array itself.
 """
 
 
-
 # import numpy 
 import numpy as np
 
@@ -86,10 +85,16 @@ perfect = temp[(temp > 60) & (temp < 80)]
 print('perfect = ', perfect)
 
 
-"""
-import numpy as np
 
-temperatures = np.genfromtxt('temperature_data.csv', delimiter=',')
+# import numpy as np
+
+# temperatures = np.genfromtxt('temperature_data.csv', delimiter=',')
+
+temperatures = np.array([[ 43.6,  45.1,  58.8,  53. ],
+                        [ 47.,   44.5,  58.3,  52.6],
+                        [ 46.7,  44.2,  57.9,  52.2],
+                        [ 46.5,  44.1,  57.6,  51.9],
+                        [ 46.2,  43.9,  57.2,  51.5]])
 
 print(temperatures)
 
@@ -102,15 +107,20 @@ monday_temperatures = temperatures_fixed[0,:]
 thursday_friday_morning = temperatures_fixed[3:5,1]
 
 temperature_extremes = temperatures_fixed[(temperatures_fixed < 50) | (temperatures_fixed > 60)]
-"""
 
-import numpy as np
+
+# import numpy as np
 
 # numpy array
 cupcakes = np.array([2, .75, 2, 1, .5])
 
 # import csv w/comma as delimiter
-recipes = np.genfromtxt('recipes.csv', delimiter=',')
+# recipes = np.genfromtxt('recipes.csv', delimiter=',')
+
+recipes = np.array([[ 2.,     0.75 ,  2.,    1.,    0.5 ],
+ [ 1.,     0.125,  1.,     1.,     0.125],
+ [ 2.75,   1.5,    1.,     0.,     1.   ],
+ [ 4.,     0.5,    2.,     2.,     0.5  ]])
 
 # display recipes
 print(recipes)
