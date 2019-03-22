@@ -1,5 +1,13 @@
 """
 numpy statistics
+
+you learned how to use NumPy to analyze single-variable datasets. Here’s what we covered:
+
+Using the np.sort method to locate outliers.
+Calculating central positions of a dataset using np.mean and np.median.
+Understanding the spread of our data using percentiles and the interquartile range.
+Finding the standard deviation of a dataset using np.std.
+
 """
 
 import numpy as np
@@ -102,3 +110,124 @@ large_set_median = np.median(large_set)
 print(large_set_median)
 print('='*40)
 
+"""
+numpy precentiles
+
+Some percentiles have specific names:
+
+The 25th percentile is called the first quartile
+The 50th percentile is called the median
+The 75th percentile is called the third quartile
+The minimum, first quartile, median, third quartile, and maximum of a dataset are called a five-number summary. 
+This set of numbers is a great thing to compute when we get a new dataset.
+The difference between the first and third quartile is a value called the interquartile range. 
+"""
+patrons = np.array([ 2, 6, 14, 4, 3, 9, 1, 11, 4, 2, 8])
+
+# find the 30th percentile
+thirtieth_percentile = np.percentile(patrons, 30)
+print(thirtieth_percentile)
+
+# find the 70th percentile
+seventieth_percentile = np.percentile(patrons, 70)
+print(seventieth_percentile)
+
+movies_watched = np.array([2, 3, 8, 0, 2, 4, 3, 1, 1, 0, 5, 1, 1, 7, 2])
+
+# find the 25th and 75th percentiles
+first_quarter = np.percentile(movies_watched, 25)
+third_quarter = np.percentile(movies_watched, 75)
+
+# find the interquartile range (75% - 25%)
+interquartile_range = third_quarter - first_quarter
+
+print(first_quarter)
+print(third_quarter)
+print(interquartile_range)
+print('='*40)
+
+# Standard Deviation
+pumpkin = np.array([68, 1820, 1420, 2062, 704, 1156, 1857, 1755, 2092, 1384])
+
+acorn_squash = np.array([20, 43, 99, 200, 12, 250, 58, 120, 230, 215])
+
+# get avg pumpkin size
+pumpkin_avg = np.mean(pumpkin)
+print(pumpkin_avg)
+
+# get ave acorn size
+acorn_avg = np.mean(acorn_squash)
+print(acorn_avg)
+
+# pumpkin standard deviation
+pumpkin_std = np.std(pumpkin)
+print(pumpkin_std)
+
+# acorn standard deviation
+acorn_squash_std = np.std(acorn_squash)
+print(acorn_squash_std)
+print('='*40)
+
+rainfall = np.array([5.21, 3.76, 3.27, 2.35, 1.89, 1.55, 0.65, 1.06, 1.72, 3.35, 4.82, 5.11])
+
+# find mean of rainfall
+rain_mean = np.mean(rainfall)
+print(rain_mean)
+
+# find median of rainfall
+rain_median = np.median(rainfall)
+print(rain_median)
+
+# find 25th and 75th percentiles
+first_quarter_rain = np.percentile(rainfall, 25)
+third_quarter_rain = np.percentile(rainfall, 75)
+print(first_quarter_rain)
+print(third_quarter_rain)
+
+# find interquatile range of rainfall
+interquartile_range = third_quarter_rain - first_quarter_rain
+print(interquartile_range)
+
+# determine standard deviation of the rainfall
+rain_std = np.std(rainfall)
+print(rain_std)
+print('='*40)
+
+calorie_stats = [70., 120., 70., 50., 110., 110., 110., 130., 90., 90., 120., 110.,
+                120., 110., 110., 110., 100., 110., 110., 110., 100., 110., 100., 100.,
+                110., 110., 100., 120., 120., 110., 100., 110., 100., 110., 120., 120.,
+                110., 110., 110., 140., 110., 100., 110., 100., 150., 150., 160., 100.,
+                120., 140.,  90., 130., 120., 100.,  50.,  50., 100., 100., 120., 100.,
+                90., 110., 110., 80.,  90., 90., 110., 110.,  90., 110., 140., 100.,
+                110., 110., 100., 100., 110.]
+
+# find average calories
+average_calories = np.mean(calorie_stats)
+print(average_calories)
+
+# sort the calorie stats
+calorie_stats_sorted = np.sort(calorie_stats)
+print(calorie_stats_sorted)
+
+# find median of calorie states
+median_calories = np.median(calorie_stats)
+print(median_calories)
+
+# find lowest percent under 60
+print(np.percentile(calorie_stats, 50))
+print(np.percentile(calorie_stats, 25))
+print(np.percentile(calorie_stats, 12))
+print(np.percentile(calorie_stats, 6))
+print(np.percentile(calorie_stats, 3))
+print(np.percentile(calorie_stats, 4))
+
+nth_percentile = 4
+print(nth_percentile)
+
+# what percent are over 60
+more_calories = 100 - nth_percentile
+print(more_calories)
+
+# calculate standard deviation
+calorie_std = np.std(calorie_stats)
+print(calorie_std)
