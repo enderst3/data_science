@@ -231,3 +231,4 @@ print(more_calories)
 # calculate standard deviation
 calorie_std = np.std(calorie_stats)
 print(calorie_std)
+
