@@ -231,4 +231,207 @@ print(more_calories)
 # calculate standard deviation
 calorie_std = np.std(calorie_stats)
 print(calorie_std)
+print('='*40)
 
+# Histograms
+
+"""
+Histograms can be graphed with Matplotlip
+
+# This imports the plotting package.  We only need to do this once.
+from matplotlib import pyplot as plt 
+
+# This plots a histogram
+plt.hist(data)
+
+# This displays the histogram
+plt.show()
+"""
+
+from matplotlib import pyplot as plt
+"""
+d = np.array([1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 5])
+
+plt.hist(d, bins=5, range=(1, 6))
+
+plt.show()
+"""
+
+'''
+import codecademylib
+import numpy as np
+from matplotlib import pyplot as plt
+
+commutes = np.genfromtxt('commutes.csv', delimiter=',')
+
+# plot the list, range, and # of bins
+plt.hist(commutes, range=(20, 50), bins=6)
+
+# show plot
+plt.show()
+'''
+
+"""
+Classify datasets by number of peaks
+
+Unimodal - has one distinctive peak
+
+Bimodal - has 2 distinct peaks
+
+Multimodal - 2 or more distinct peaks
+
+Uniform - has no distinct peaks
+
+symmetric has equal amounts of data on both sides of the peak
+
+skew-right - most of the data to the left of the peak
+
+skew-left - most ot the data is to the right
+
+"""
+
+"""
+import codecademylib
+import numpy as np
+from matplotlib import pyplot as plt
+
+# Brachiosaurus
+b_data = np.random.normal(
+    loc=6.7, # mean is 6.7
+    scale=0.7, # standard deviation is 0.7
+    size=1000) # we want 1000 samples
+
+# Fictionosaurus
+f_data = np.random.normal(
+    loc=7.7, # mean is 6.7
+    scale=0.3, # standard deviation is 0.7
+    size=1000) # we want 1000 samples
+
+plt.hist(b_data,
+         bins=30, range=(5, 8.5), histtype='step',
+         label='Brachiosaurus')
+plt.hist(f_data,
+         bins=30, range=(5, 8.5), histtype='step',
+         label='Fictionosaurus')
+plt.xlabel('Femur Length (ft)')
+plt.legend(loc=2)
+plt.show()
+
+mystery_dino = "brachiosaurus"
+answer = False
+"""
+
+"""
+# std_dev = standard deviation of the dataset
+# mean = mean of the dataset
+
+# 68% of the data falls between +/- 1 standard deviation
+one_std_range = [mean - std_dev, mean + std_dev]
+
+# 95% of the data falls between +/- 2 standard deviations
+two_std_range = [mean - (2*std_dev), mean + (2*std_dev)]
+
+# 99.7% of the data falls between +/- 3 standard deviations
+three_std_range = [mean - (3*std_dev), mean + (3*std_dev)]
+"""
+
+# import numpy as np
+
+# 1000 is average with 100 std deviation
+# one above standard
+one_above = 1100
+
+# calculate one std deviation below mean
+one_below = 900
+
+# print to terminal
+print(one_above)
+print(one_below)
+
+# out of 2000 runs how many would you expect to be within the range of one_above and one_below?
+one_std = 2000*.68
+
+print(one_std)
+print('='*40)
+
+"""
+np.random.binomial(N, P, Size)
+"""
+"""
+# Let's generate 10,000 "experiments"
+# N = 10 shots
+# P = 0.30 (30% he'll get a free throw)
+
+a = np.random.binomial(10, 0.30, size=10000)
+plt.hist(a, range=(0, 10), bins=10, normed=True)
+plt.xlabel('Number of "Free Throws"')
+plt.ylabel('Frequency')
+plt.show()
+"""
+
+"""
+# 500 emails, %5 response, 10000 trials
+emails = np.random.binomial(500, .05, size=10000)
+
+# plot data
+plt.hist(emails)
+
+# show data
+plt.show()
+
+# probability that no one opens the emails
+no_emails = np.mean(emails==0)
+
+# probability that 8% or more open
+b_test_emails = np.mean(emails==.08)
+
+print(no_emails)
+print(b_test_emails)
+"""
+
+"""
+Review-
+Here’s what we covered:
+
+What is a histogram and how to map one using Matplotlib
+How to identify different dataset shapes, depending on peaks or distribution of data
+The definition of a normal distribution and how to use NumPy to generate one using NumPy’s random number functions
+The relationships between normal distributions and standard deviations
+The definition of a binomial distribution
+Now you can use NumPy to analyze and graph your own datasets! 
+"""
+
+"""
+import codecademylib
+import numpy as np
+from matplotlib import pyplot as plt
+
+sunflowers = np.genfromtxt('sunflower_heights.csv',
+                           delimiter=',')
+
+# Calculate mean and std of sunflowers here:
+sunflowers_mean = np.mean(sunflowers)
+sunflowers_std = np.std(sunflowers)
+
+# Calculate sunflowers_normal here:
+sunflowers_normal = np.random.normal(
+  loc=sunflowers_mean,
+  scale=sunflowers_std,
+  size=5000
+)
+
+plt.hist(sunflowers,
+         range=(11, 15), histtype='step', linewidth=2,
+        label='Observed', normed=True)
+plt.hist(sunflowers_normal,
+         range=(11, 15), histtype='step', linewidth=2,
+        label='Normal', normed=True)
+plt.legend()
+plt.show()
+
+
+# Calculate probabilities here:
+experiments = np.random.binomial(200, 0.1, size=5000)
+prob = np.mean(experiments < 20)
+print(prob)
+"""
