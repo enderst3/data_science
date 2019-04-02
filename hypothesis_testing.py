@@ -14,10 +14,10 @@ sample_5 = np.random.choice(population, size=30, replace=False)
 sample_1_mean = np.mean(sample_1)
 print "Sample 1 Mean: {}".format(sample_1_mean)
 
-sample_2_mean = "Not calculated"
-sample_3_mean = "Not calculated"
-sample_4_mean = "Not calculated"
-sample_5_mean = "Not calculated"
+sample_2_mean = np.mean(sample_2)
+sample_3_mean = np.mean(sample_3)
+sample_4_mean = np.mean(sample_4)
+sample_5_mean = np.mean(sample_5)
 
 print "Sample 2 Mean: {}".format(sample_2_mean)
 print "Sample 3 Mean: {}".format(sample_3_mean)
